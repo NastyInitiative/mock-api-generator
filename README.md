@@ -2,10 +2,7 @@
 
 ## Description
 
-A little project for mocking REST api's using Nest
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="120" alt="Nest Logo" /></a>
-</p>
+A little project for mocking REST api's using <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="120" alt="Nest Logo" /></a> (Click on icon to go to the official site)
 
 ## Installation
 
