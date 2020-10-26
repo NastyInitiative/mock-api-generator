@@ -19,13 +19,15 @@ export class DataService {
                 "front": {
                     "url": "minio://postepay-code-documents:b963e0da-b61f-4074-b47c-e8efe9ea0f5b/68a34ef3-e5dc-49cc-9c6d-4d7033d1020b.",
                     "customData": {
-                        "minio-url": "minio://postepay-code-documents:b963e0da-b61f-4074-b47c-e8efe9ea0f5b/68a34ef3-e5dc-49cc-9c6d-4d7033d1020b."
+                        "minio-url": "minio://postepay-code-documents:b963e0da-b61f-4074-b47c-e8efe9ea0f5b/68a34ef3-e5dc-49cc-9c6d-4d7033d1020b.",
+                        "azure-url": "https://tappgateway.rete.testposte/postepay-code-documents-coll/852ab806-83fa-4f80-af6f-3e80d9717d65.png",
                     }
                 },
                 "back": {
                     "url": "minio://postepay-code-documents:b963e0da-b61f-4074-b47c-e8efe9ea0f5b/b568a3be-f369-44fd-8c95-9d79e580b7c5.",
                     "customData": {
-                        "minio-url": "minio://postepay-code-documents:b963e0da-b61f-4074-b47c-e8efe9ea0f5b/b568a3be-f369-44fd-8c95-9d79e580b7c5."
+                        "minio-url": "minio://postepay-code-documents:b963e0da-b61f-4074-b47c-e8efe9ea0f5b/b568a3be-f369-44fd-8c95-9d79e580b7c5.",
+                        "azure-url": "https://tappgateway.rete.testposte/postepay-code-documents-coll/22b6cb88-cc1e-455e-b35a-e907b17ab4f1.png",
                     }
                 }
             },
