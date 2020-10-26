@@ -11,10 +11,8 @@ export class ApiController {
         message.content= this.documents.getDocs();
         return message.content;
     }
-    @Post('getTitolare')
-    getTitolare(@Body() message){
-        console.log("ApiController -> getDocument ->  message",  message)
-        message = this.documents.getListTitolare();
-        return message;
+    @Get('getTitolari')
+    getTitolare(){
+        return this.documents.getListTitolare();
     }
 }
