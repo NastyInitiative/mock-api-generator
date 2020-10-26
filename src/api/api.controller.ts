@@ -4,10 +4,17 @@ import { DataService } from "../services/data/data.service";
 @Controller('api')
 export class ApiController {
     constructor(private documents: DataService){}
+    
     @Post('getDocuments')
     getDocument(@Body() message: Message){
         console.log("ApiController -> getDocument ->  message",  message)
         message.content= this.documents.getDocs();
         return message.content;
+    }
+    @Post('getTitolare')
+    getTitolare(@Body() message){
+        console.log("ApiController -> getDocument ->  message",  message)
+        message = this.documents.getListTitolare();
+        return message;
     }
 }

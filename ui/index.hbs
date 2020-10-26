@@ -9,6 +9,7 @@
 		<script src="./jquery-3.5.1.min.js"></script>
 		<script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 		<script src="./bootstrap/js/bootstrap.min.js"></script>
+		<script src="./index.js"></script>
 		<title>Mock API generator</title>
 	</head>
 
@@ -38,7 +39,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="input-group">
-						<input type="text"  class="form-control">
+						<input type="text"  class="form-control" id="API-name">
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -48,6 +49,11 @@
 						<option value="{{this}}">{{this}}</option>
 						{{/each}}
 					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<button id="sendrequest">Invia</button>
 				</div>
 			</div>
 		</div>

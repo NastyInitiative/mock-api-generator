@@ -1,4 +1,4 @@
 export class Message{
-    content :Object
+    content: Object
     data: Object
 }
