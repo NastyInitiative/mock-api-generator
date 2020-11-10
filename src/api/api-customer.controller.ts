@@ -20,7 +20,9 @@ export class ApiCustomerController {
     }
 
     @Post('/fea/start')
-    startFEA() {
+    startFEA(@Body() prefNumber: Response) {
+        console.log("Prefferd number :: ", prefNumber);
+        console.log(":::::::::::::::::::::::::::::::");
         console.log(":::FEA Start:::");
         console.log(this.customer.getFeaStart());
         return this.customer.getFeaStart().id;
@@ -29,7 +31,7 @@ export class ApiCustomerController {
     @Post('/fea/accept')
     @HttpCode(202)
     acceptFEA() {
-        console.log(':::FEA Accepted');
+        console.log(':::FEA Accepted:::');
         return 'Ridaje';
     }
 }
