@@ -1,4 +1,12 @@
-import { Body, Controller, Get, HttpCode, Param, Post, Put } from '@nestjs/common';
+import { Body, 
+        Controller, 
+        Get, 
+        HttpCode, 
+        HttpException, 
+        HttpStatus, 
+        Param, 
+        Post, 
+        Put } from '@nestjs/common';
 import { ContractsService } from 'src/services/contracts.service';
 
 
@@ -18,11 +26,11 @@ export class ApiContractsController {
         console.log(":::Received contract ID param:::");
         console.log(contractId);
         console.log("::::::::::::::::::::::::::::::::::::");
-        return 'Created'
+        return 'Created';
     }
     
     @Post('/:contractId/signature/otps')
-    generateNewOtp(@Body() contractId:string ) {
+    generateNewOtp(@Body() contractId: string) {
         console.log("::::::::::::::::::POST OTP::::::::::::::::::");
         console.log(":::Received contract ID param:::");
         console.log(contractId);
@@ -30,6 +38,10 @@ export class ApiContractsController {
         console.log(this.contracts.getOtpResp());
         console.log("::::::::::::::::::::::::::::::::::::");
         return this.contracts.getOtpResp();
+    }
+    @HttpCode(400)
+    errorResponse() {
+        throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN)
     }
 
     @Put('/:contractId/signature/otps/:referenceId')

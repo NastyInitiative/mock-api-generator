@@ -16,7 +16,19 @@ export class ContractsService {
     }
 
     otpResp = {
-        'referenceId': "string"
+        'referenceId': "transactionId"
+    }
+
+    errorResp = {
+        'info': {
+            'resultCode': '400',
+            'resultMessage': 'Invalid parameter type',
+            'resultDetails': [
+                'Bad request: Invalid parameter type'
+            ],
+            'executionTime': 0,
+            'requestId': ""
+        }
     }
     getContracts() {
         return this.contracts;
@@ -25,4 +37,9 @@ export class ContractsService {
     getOtpResp() {
         return this.otpResp;
     }
+    
+    getErrorResp() {
+        return this.errorResp;
+    }
+
 }
