@@ -512,11 +512,11 @@ export class DataService {
     contracts = {
         "contracts": [
             {
-                "id": "P-00000000715-0fcbb388-83d5-439c-a86f-d6f95a9da868",
+                "id": "6e389ae6-4d01-44d2-92a2-623975eaf07a",
                 "signed": false
             },
             {
-                "id": "6e389ae6-4d01-44d2-92a2-623975eaf07a",
+                "id": "6e389ae6-4d01-44d2-92a2-623975eaf06b",
                 "signed": false
             }
         ]
