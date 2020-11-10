@@ -7,31 +7,39 @@ export class ApiCustomerController {
 
     @Get('/fea')
     getFeaStatus() {
+        console.log("::::::::::::::::::::::::::::::::::::");
         console.log(":::FEA status:::");
         console.log(this,this.customer.getFeaStatus());
+        console.log("::::::::::::::::::::::::::::::::::::");
         return this.customer.getFeaStatus();
     }
 
     @Get('/numbers')
     getPhoneNumbers() {
+        console.log("::::::::::::::::::::::::::::::::::::");
         console.log(":::Customer Numbers:::");
         console.log(this.customer.getPhoneNumbers());
+        console.log("::::::::::::::::::::::::::::::::::::");
+
         return this.customer.getPhoneNumbers();
     }
 
     @Post('/fea/start')
     startFEA(@Body() prefNumber) {
-        console.log("Prefferd number :: ", prefNumber);
-        console.log(":::::::::::::::::::::::::::::::");
+        console.log("::::::::::::::::::::::::::::::::::::");
         console.log(":::FEA Start:::");
+        console.log("Prefferd number :: ", prefNumber);
         console.log(this.customer.getFeaStart());
+        console.log("::::::::::::::::::::::::::::::::::::");
         return this.customer.getFeaStart();
     }
 
     @Post('/fea/accept')
     @HttpCode(202)
     acceptFEA() {
+        console.log("::::::::::::::::::::::::::::::::::::");
         console.log(':::FEA Accepted:::');
+        console.log("::::::::::::::::::::::::::::::::::::");
         return 'Ridaje';
     }
 }
