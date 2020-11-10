@@ -1,3 +1,5 @@
+import { CustomersService } from './services/customers.service';
+import { ContractsService } from './services/contracts.service';
 import { ApiCustomerController } from './api/api-customer.controller';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -14,6 +16,11 @@ import { DataService } from './services/data/data.service';
     ApiDocsController,
     ApiContractsController,
   ],
-  providers: [AppService, DataService],
+  providers: [
+    CustomersService,
+    ContractsService,
+    AppService,
+    DataService,
+  ],
 })
 export class AppModule {}

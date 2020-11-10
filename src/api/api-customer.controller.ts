@@ -1,9 +1,9 @@
 import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
-import { DataService } from 'src/services/data/data.service';
+import { CustomersService } from 'src/services/customers.service';
 
 @Controller('/v1/customer')
 export class ApiCustomerController {
-    constructor(private customer: DataService){}
+    constructor(private customer: CustomersService){}
 
     @Get('/fea')
     getFeaStatus() {
