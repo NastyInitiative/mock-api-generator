@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import {Message} from '../../models/data.model';
-import { DataService } from "../../services/data/data.service";
+import {Message} from '../models/data.model';
+import { DataService } from "../services/data/data.service";
 @Controller('api-docs')
 export class ApiDocsController {
     constructor(private documents: DataService){}

@@ -1,5 +1,5 @@
 import { Controller, Get, HttpCode, Param, Post, Put } from '@nestjs/common';
-import { DataService } from "../../services/data/data.service";
+import { DataService } from "../services/data/data.service";
 
 
 @Controller('/v1/contracts')
