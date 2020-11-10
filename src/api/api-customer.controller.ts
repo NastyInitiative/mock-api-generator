@@ -20,7 +20,7 @@ export class ApiCustomerController {
     }
 
     @Post('/fea/start')
-    startFEA(@Body() prefNumber: Response) {
+    startFEA(@Body() prefNumber) {
         console.log("Prefferd number :: ", prefNumber);
         console.log(":::::::::::::::::::::::::::::::");
         console.log(":::FEA Start:::");
