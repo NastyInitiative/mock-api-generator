@@ -1,4 +1,4 @@
 export class Message{
-    content: Object
-    data: Object
+    content: string
+    data: string
 }

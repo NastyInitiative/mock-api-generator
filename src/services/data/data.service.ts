@@ -509,11 +509,28 @@ export class DataService {
 
     ]
 
-    getDocs(): Object {
+    contracts = {
+        "contracts": [
+            {
+                "id": "P-00000000715-0fcbb388-83d5-439c-a86f-d6f95a9da868",
+                "signed": false
+            },
+            {
+                "id": "6e389ae6-4d01-44d2-92a2-623975eaf07a",
+                "signed": false
+            }
+        ]
+    }
+
+    getDocs() {
         return this.responseDocuments;
     }
 
     getListTitolare() {
         return this.TitolareDitta;
+    }
+
+    getContracts() {
+        return this.contracts;
     }
 }
