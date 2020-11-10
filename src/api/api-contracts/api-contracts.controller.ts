@@ -23,12 +23,12 @@ export class ApiContractsController {
         return 'codice otps'
     }
 
-    @Post('/:contractId/signature/otps/:referenceId')
+    @Put('/:contractId/signature/otps/:referenceId')
     signIn(@Param('contractId') contractId: string, @Param('referenceId') referenceId: string) {
         console.log("ApiContractsController -> signIn -> referenceId", referenceId)
         console.log("ApiContractsController -> signIn -> contractId", contractId)
 
-        return 'Daje tutta'
+        return 'Daje tutta';
         
     }
 }
