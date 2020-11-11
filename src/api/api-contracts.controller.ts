@@ -40,19 +40,25 @@ export class ApiContractsController {
         return this.contracts.getOtpResp();
     }
     @HttpCode(400)
-    errorResponse() {
+    postOtpErrorResponse() {
         throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN)
     }
 
     @Put('/:contractId/signature/otps/:referenceId')
-    signIn(@Param('contractId') contractId: string, @Param('referenceId') referenceId: string) {
+    signIn(@Body() contractBody: string ,@Param('contractId') contractId: string, @Param('referenceId') referenceId: string) {
         console.log("::::::::::::::::PUT OTP::::::::::::::::::::");
         console.log(":::Received contract ID param:::");
         console.log(contractId);
         console.log(":::Received reference ID param:::");
         console.log(referenceId);
+        console.log(":::Received body data:::");
+        console.log(contractBody);
         console.log("::::::::::::::::::::::::::::::::::::");
         return 'Daje tutta';
-        
     }
+    @HttpCode(400)
+    putOtpErrorResponse() {
+        throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN);
+    }
+    
 }
