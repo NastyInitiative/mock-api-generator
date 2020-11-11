@@ -29,6 +29,23 @@ export class CustomersService {
         ]
     };
 
+    feaStart = {
+        "id": "FEA_ACCEPT",
+        "documentIds": [
+            "PRIVACY_FEA",
+            "CARATTERISTICHE_FEA",
+            "MOD_CONTRATTO_FEA"
+        ],
+        "fieldGroups": [
+            {
+                "name": "FEA_SIGN",
+                "documentIds": [
+                    "MOD_CONTRATTO_FEA"
+                ]
+            }
+        ]
+    }
+
     getFeaStatus() {
         return this.feaStatus;
     }
@@ -38,6 +55,6 @@ export class CustomersService {
     }
 
     getFeaStart() {
-        return this.feaStartResp;
+        return this.feaStart;
     }
 }
