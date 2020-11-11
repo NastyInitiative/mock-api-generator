@@ -7,7 +7,8 @@ import { Body,
         Param, 
         Post, 
         Put } from '@nestjs/common';
-import { ContractsService } from 'src/services/contracts.service';
+import { ContractsService } from '../services/contracts.service';
+import { OTP } from '../models/contracts.model';
 
 
 @Controller('/v1/contracts')
@@ -45,7 +46,7 @@ export class ApiContractsController {
     }
 
     @Put('/:contractId/signature/otps/:referenceId')
-    signIn(@Body() contractBody: string ,@Param('contractId') contractId: string, @Param('referenceId') referenceId: string) {
+    signIn(@Body() contractBody: OTP ,@Param('contractId') contractId: string, @Param('referenceId') referenceId: string) {
         console.log("::::::::::::::::PUT OTP::::::::::::::::::::");
         console.log(":::Received contract ID param:::");
         console.log(contractId);
