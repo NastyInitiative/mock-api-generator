@@ -31,10 +31,10 @@ export class ApiContractsController {
     }
     
     @Post('/:contractId/signature/otps')
-    @HttpCode(400)
-    postOtpErrorResponse() {
-        throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN)
-    }
+    // @HttpCode(400)
+    // postOtpErrorResponse() {
+    //     throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN)
+    // }
     @HttpCode(201)
     generateNewOtp(@Body() contractId: string) {
         console.log("::::::::::::::::::POST OTP::::::::::::::::::");
@@ -47,10 +47,10 @@ export class ApiContractsController {
     }
 
     @Put('/:contractId/signature/otps/:referenceId')
-    @HttpCode(400)
-    putOtpErrorResponse() {
-        throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN);
-    }
+    // @HttpCode(400)
+    // putOtpErrorResponse() {
+    //     throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN);
+    // }
     @HttpCode(201)
     signIn(@Body() contractBody: OTP ,@Param('contractId') contractId: string, @Param('referenceId') referenceId: string) {
         console.log("::::::::::::::::PUT OTP::::::::::::::::::::");

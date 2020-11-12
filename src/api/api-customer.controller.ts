@@ -1,4 +1,5 @@
-import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
+import { doc } from 'prettier';
 import { CustomersService } from 'src/services/customers.service';
 
 @Controller('/v1/customer')
@@ -44,17 +45,40 @@ export class ApiCustomerController {
     }
 
     @Get('/fea/documents/:documentIds')
+    @HttpCode(202)
     getDocId(@Param('documentIds') docId: string){
         console.log(":::::::::::::::::Document IDs GET:::::::::::::::::::");
         console.log(":::Received Id Array:::");
         console.log(docId);
         const splittedIds = docId.includes(',') ? docId.split(',') : [docId];
         const docArray = this.customer.getDocId().documents;
-        const result = docArray.filter((outerElem) => {
-            return splittedIds.filter((innerElem) => {
-                return outerElem.id = innerElem
-            });
-        });
-        return result;
-    } 
+        const result = docArray.filter(outerElem => splittedIds.includes(outerElem.id))
+        const docRespArray = {documents: result};
+        return docRespArray;
+    }
+    @HttpCode(400)
+    getDocError() {
+        throw new HttpException('bad request', HttpStatus.FORBIDDEN);
+    }
+
+
+    // @Get('/fea/documents/:documentIds')
+    // getDocId(@Param('documentIds') docId: string){
+    //     console.log(":::::::::::::::::Document IDs GET:::::::::::::::::::");
+    //     console.log(":::Received Id Array:::");
+    //     console.log(docId);
+    //     const splittedIds = docId.includes(',') ? docId.split(',') : [docId];
+    //     const docArray = this.customer.getDocId().documents;
+    //     const result = {
+    //         documents: []
+    //     };
+    //     docArray.forEach((outerElem) => {
+    //         splittedIds.forEach((innerElem) => {
+    //             if(outerElem.id == innerElem) {
+    //                 result.documents.push(outerElem);
+    //             };
+    //         });
+    //     });
+    //     return result;
+    // }
 }
