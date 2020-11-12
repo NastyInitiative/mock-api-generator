@@ -44,13 +44,14 @@ export class ApiCustomerController {
     }
 
     @Get('/fea/documents/:documentIds')
-    getDocId(@Param('documentIds') docId: Array<string>){
+    getDocId(@Param('documentIds') docId: string){
         console.log(":::::::::::::::::Document IDs GET:::::::::::::::::::");
         console.log(":::Received Id Array:::");
         console.log(docId);
+        const splittedIds = docId.includes(',') ? docId.split(',') : [docId];
         const docArray = this.customer.getDocId().documents;
         const result = docArray.filter((outerElem) => {
-            return docId.filter((innerElem) => {
+            return splittedIds.filter((innerElem) => {
                 return outerElem.id = innerElem
             });
         });
