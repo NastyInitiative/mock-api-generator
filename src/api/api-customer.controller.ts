@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
 import { CustomersService } from 'src/services/customers.service';
 
 @Controller('/v1/customer')
@@ -42,4 +42,18 @@ export class ApiCustomerController {
         console.log("::::::::::::::::::::::::::::::::::::");
         return 'Ridaje';
     }
+
+    @Get('/fea/documents/:documentIds')
+    getDocId(@Param('documentIds') docId: Array<string>){
+        console.log(":::::::::::::::::Document IDs GET:::::::::::::::::::");
+        console.log(":::Received Id Array:::");
+        console.log(docId);
+        const docArray = this.customer.getDocId().documents;
+        const result = docArray.filter((outerElem) => {
+            return docId.filter((innerElem) => {
+                return outerElem.id = innerElem
+            });
+        });
+        return result;
+    } 
 }
