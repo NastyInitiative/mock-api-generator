@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Documents } from 'src/models/contracts.model';
 
 @Injectable()
 export class DataService {
@@ -517,6 +518,11 @@ export class DataService {
         return this.TitolareDitta;
     }
 
-
-   
+    searchDocs(docId: string, documents: Documents[]) {
+        const splittedIds = docId.includes(',') ? docId.split(',') : [docId];
+        const docArray: Documents[] = documents;
+        const result = docArray.filter(outerElem => splittedIds.includes(outerElem.id))
+        const docRespArray = {documents: result};
+        return docRespArray;
+    }
 }

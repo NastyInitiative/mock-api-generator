@@ -9,11 +9,13 @@ import { Body,
         Put } from '@nestjs/common';
 import { ContractsService } from '../services/contracts.service';
 import { OTP } from '../models/contracts.model';
+import { DataService } from 'src/services/data.service';
+import { CustomersService } from 'src/services/customers.service';
 
 
 @Controller('/v1/contracts')
 export class ApiContractsController {
-    constructor(private contracts: ContractsService){}
+    constructor(private contracts: ContractsService, private documents: DataService, private customers: CustomersService){}
 
     @Get()
     getContracts() {
@@ -64,4 +66,15 @@ export class ApiContractsController {
         return `Daje tutta, funziona: 
                 ${contractBody}`;
     }
+    @Get(':contractId/documents/:documentIds')
+    getContractDoc(@Param('contractId') contractId: string, @Param('documentIDs') docId: string){
+        console.log("::::::::::::::::GET CONTRACTS::::::::::::::::::::");
+        console.log(":::Received Contract ID param");
+        console.log(contractId);
+        console.log(':::Received Document ID param:::');
+        console.log(docId);
+        console.log("::::::::::::::::::::::::::::::::::::");
+        return this.documents.searchDocs(docId, this.customers.getDocId().documents);        
+    }
+
 }

@@ -2,10 +2,11 @@ import { Body, Controller, Get, HttpCode, HttpException, HttpStatus, Param, Post
 import { doc } from 'prettier';
 import { Documents } from 'src/models/contracts.model';
 import { CustomersService } from 'src/services/customers.service';
+import { DataService } from 'src/services/data.service';
 
 @Controller('/v1/customer')
 export class ApiCustomerController {
-    constructor(private customer: CustomersService){}
+    constructor(private customer: CustomersService, private contracts: DataService){}
 
     @Get('/fea')
     getFeaStatus() {
@@ -51,11 +52,7 @@ export class ApiCustomerController {
         console.log(":::::::::::::::::Document IDs GET:::::::::::::::::::");
         console.log(":::Received Id Array:::");
         console.log(docId);
-        const splittedIds = docId.includes(',') ? docId.split(',') : [docId];
-        const docArray: Documents[] = this.customer.getDocId().documents;
-        const result = docArray.filter(outerElem => splittedIds.includes(outerElem.id))
-        const docRespArray = {documents: result};
-        return docRespArray;
+        return this.contracts.searchDocs(docId, this.customer.getDocId().documents);
     }
     @HttpCode(400)
     getDocError() {
