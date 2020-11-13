@@ -8,7 +8,7 @@ import { Body,
         Post, 
         Put } from '@nestjs/common';
 import { ContractsService } from '../services/contracts.service';
-import { OTP } from '../models/contracts.model';
+import { Documents, OTP } from '../models/contracts.model';
 import { DataService } from 'src/services/data.service';
 import { CustomersService } from 'src/services/customers.service';
 
@@ -33,10 +33,11 @@ export class ApiContractsController {
     }
     
     @Post('/:contractId/signature/otps')
-    @HttpCode(400)
-    postOtpErrorResponse() {
-        throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN)
-    }
+    // Implement only if request has a body
+    // @HttpCode(400)
+    // postOtpErrorResponse() {
+    //     throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN)
+    // }
     @HttpCode(201)
     generateNewOtp(@Body() contractId: string) {
         console.log("::::::::::::::::::POST OTP::::::::::::::::::");
@@ -49,10 +50,11 @@ export class ApiContractsController {
     }
 
     @Put('/:contractId/signature/otps/:referenceId')
-    @HttpCode(400)
-    putOtpErrorResponse() {
-        throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN);
-    }
+    // Implement only if request has a body
+    // @HttpCode(400)
+    // putOtpErrorResponse() {
+    //     throw new HttpException(this.contracts.getErrorResp(), HttpStatus.FORBIDDEN);
+    // }
     @HttpCode(201)
     signIn(@Body() contractBody: OTP ,@Param('contractId') contractId: string, @Param('referenceId') referenceId: string) {
         console.log("::::::::::::::::PUT OTP::::::::::::::::::::");
@@ -67,14 +69,46 @@ export class ApiContractsController {
                 ${contractBody}`;
     }
     @Get(':contractId/documents/:documentIds')
-    getContractDoc(@Param('contractId') contractId: string, @Param('documentIDs') docId: string){
+    getContractDoc(@Param('contractId') contractId: string, @Param('documentIds') docId: string){
         console.log("::::::::::::::::GET CONTRACTS::::::::::::::::::::");
         console.log(":::Received Contract ID param");
         console.log(contractId);
         console.log(':::Received Document ID param:::');
         console.log(docId);
         console.log("::::::::::::::::::::::::::::::::::::");
-        return this.documents.searchDocs(docId, this.customers.getDocId().documents);        
+        const splittedIds = docId.includes(',') ? docId.split(',') : [docId];
+
+        const docs = this.contracts.getDocuments();
+        const resp = {documents: []};
+        splittedIds.forEach( elem =>  {
+            if(docs.hasOwnProperty(elem)) {
+                const innerDoc = docs[elem];
+                console.log("ApiContractsController -> getContractDoc -> innerDoc", innerDoc)
+                const outerDoc: Documents = {
+                    id: "",
+                    url: "",
+                    description: "",
+                    fields: []
+                };
+                outerDoc.id = elem;
+                outerDoc.url = innerDoc.url;
+                outerDoc.description = innerDoc.attributes.description
+                innerDoc.signatureFields.forEach((singleField) => {
+                    const mappedField = {
+                        fieldGroup: singleField.attributes.fieldGroup,
+                        name: singleField.attributes.name,
+                        shortDescription: singleField.attributes.ShortDescription,
+                        longDescription: singleField.attributes.longDescription,
+                        optional: singleField.attributes.isOptional
+
+                    }
+                    outerDoc.fields.push(mappedField)
+                })
+                resp.documents.push(outerDoc);
+            }
+        })
+        return resp;
+        // return this.documents.searchDocs(docId, this.customers.getDocId().documents);        
     }
 
 }
