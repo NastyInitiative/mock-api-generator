@@ -1,5 +1,6 @@
 import { Body, Controller, Get, HttpCode, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
 import { doc } from 'prettier';
+import { Documents } from 'src/models/contracts.model';
 import { CustomersService } from 'src/services/customers.service';
 
 @Controller('/v1/customer')
@@ -51,14 +52,14 @@ export class ApiCustomerController {
         console.log(":::Received Id Array:::");
         console.log(docId);
         const splittedIds = docId.includes(',') ? docId.split(',') : [docId];
-        const docArray = this.customer.getDocId().documents;
+        const docArray: Documents[] = this.customer.getDocId().documents;
         const result = docArray.filter(outerElem => splittedIds.includes(outerElem.id))
         const docRespArray = {documents: result};
         return docRespArray;
     }
     @HttpCode(400)
     getDocError() {
-        throw new HttpException('bad request', HttpStatus.FORBIDDEN);
+        throw new HttpException(this.customer.getErrorResp(), HttpStatus.FORBIDDEN);
     }
 
 
