@@ -69,6 +69,7 @@ export class ContractsService {
         },
         "8240353e-6315-4030-94ee-c2da9a95fa85":{
             "filename":"Contratto di noleggio.pdf",
+            "url": "https://minio-service-minio-distributed.app.svil2.ocprm.testposte/pom-oad/P-00000000715-0fcbb388-83d5-439c-a86f-d6f95a9da868/PosteSoluzionePremium%20-%20Precontrattuale%20DIP%20Aggiuntivo.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=SfU1xnBs%2F20201112%2F%2Fs3%2Faws4_request&X-Amz-Date=20201112T114432Z&X-Amz-Expires=432000&X-Amz-SignedHeaders=host&X-Amz-Signature=5869b641d36ae085cf4b0c351eeec5d687e976121b97fb8abc74e8b0ae3fb409",
             "attributes":{
                 "description": "Contratto di noleggio",
                 "type": null
@@ -102,6 +103,7 @@ export class ContractsService {
         },
         "c515f808-529d-4fbf-9111-a9d7c117a329":{
             "filename":"Modulo di richiesta del Buono Fruttifero e del Libretto Smart.pdf",
+            "url": "https://minio-service-minio-distributed.app.svil2.ocprm.testposte/pom-oad/P-00000000715-0fcbb388-83d5-439c-a86f-d6f95a9da868/PosteSoluzionePremium%20-%20Precontrattuale%20DIP%20Aggiuntivo.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=SfU1xnBs%2F20201112%2F%2Fs3%2Faws4_request&X-Amz-Date=20201112T114432Z&X-Amz-Expires=432000&X-Amz-SignedHeaders=host&X-Amz-Signature=5869b641d36ae085cf4b0c351eeec5d687e976121b97fb8abc74e8b0ae3fb409",
             "attributes":{
                 "description": "Modulo di richiesta del Buono Fruttifero Libretto Smart",
                 "type": null
@@ -136,6 +138,7 @@ export class ContractsService {
         },
         "3ead7a0c-82d7-40f5-a5be-02337e480401":{
             "filename":"Modulo di variazione anagrafica.pdf",
+            "url": "https://minio-service-minio-distributed.app.svil2.ocprm.testposte/pom-oad/P-00000000715-0fcbb388-83d5-439c-a86f-d6f95a9da868/PosteSoluzionePremium%20-%20Precontrattuale%20DIP%20Aggiuntivo.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=SfU1xnBs%2F20201112%2F%2Fs3%2Faws4_request&X-Amz-Date=20201112T114432Z&X-Amz-Expires=432000&X-Amz-SignedHeaders=host&X-Amz-Signature=5869b641d36ae085cf4b0c351eeec5d687e976121b97fb8abc74e8b0ae3fb409",
             "attributes":{
                 "description": "Modulo di variazione anagrafica",
                 "type": null

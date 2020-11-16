@@ -83,7 +83,6 @@ export class ApiContractsController {
         splittedIds.forEach( elem =>  {
             if(docs.hasOwnProperty(elem)) {
                 const innerDoc = docs[elem];
-                console.log("ApiContractsController -> getContractDoc -> innerDoc", innerDoc)
                 const outerDoc: Documents = {
                     id: "",
                     url: "",
@@ -103,10 +102,10 @@ export class ApiContractsController {
 
                     }
                     outerDoc.fields.push(mappedField)
-                })
+                });
                 resp.documents.push(outerDoc);
             }
-        })
+        });
         return resp;
         // return this.documents.searchDocs(docId, this.customers.getDocId().documents);        
     }
