@@ -107,7 +107,6 @@ export class ApiContractsController {
             }
         });
         return resp;
-        // return this.documents.searchDocs(docId, this.customers.getDocId().documents);        
     }
 
 }
