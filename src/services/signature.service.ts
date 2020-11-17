@@ -24,17 +24,13 @@ export class SignatureService {
                         "signed": false,
                         "documents": [
                             {
-                                "documentId": "6ac691db-f32e-4072-b42c-702b411e915z",
+                                "documentId": "c3d652f3-bc24-4a95-81d6-4b933a6e27d7",
                                 "index": 0
                             },
                             {
-                                "documentId": "6ac691db-f32e-4072-b42c-702b411e915z",
+                                "documentId": "f89e513d-ac54-4e05-aa1f-f7c38e580823",
                                 "index": 1
                             },
-                            {
-                                "documentId": "6ac691db-f32e-4072-b42c-702b411e915z",
-                                "index": 4
-                            }
                         ]
                     },
                     {
@@ -44,7 +40,7 @@ export class SignatureService {
                         "signed": false,
                         "documents": [
                             {
-                                "documentId": "6ac691db-f32e-4072-b42c-702b411e915z",
+                                "documentId": "6ac691db-f32e-4072-b42c-702b411e916e",
                                 "index": 4
                             }
                         ]
