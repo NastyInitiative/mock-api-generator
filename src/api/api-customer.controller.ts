@@ -1,14 +1,16 @@
 import { Body, Controller, Get, HttpCode, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
-import { doc } from 'prettier';
+import { Timeout } from '@nestjs/schedule';
 import { Documents } from 'src/models/contracts.model';
 import { CustomersService } from 'src/services/customers.service';
 import { DataService } from 'src/services/data.service';
+
 
 @Controller('/v1/customer')
 export class ApiCustomerController {
     constructor(private customer: CustomersService, private contracts: DataService){}
 
     @Get('/fea')
+    @Timeout(5000)
     getFeaStatus() {
         console.log("::::::::::::::::::::::::::::::::::::");
         console.log(":::FEA status:::");

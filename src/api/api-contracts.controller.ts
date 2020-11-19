@@ -99,7 +99,6 @@ export class ApiContractsController {
                         shortDescription: singleField.attributes.ShortDescription,
                         longDescription: singleField.attributes.longDescription,
                         optional: singleField.attributes.isOptional
-
                     }
                     outerDoc.fields.push(mappedField)
                 });
