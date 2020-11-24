@@ -7,6 +7,8 @@ import { Body,
         Param, 
         Post, 
         Put } from '@nestjs/common';
+import { Timeout } from '@nestjs/schedule';
+
 import { ContractsService } from '../services/contracts.service';
 import { Documents, OTP } from '../models/contracts.model';
 import { DataService } from 'src/services/data.service';
@@ -18,6 +20,7 @@ export class ApiContractsController {
     constructor(private contracts: ContractsService, private documents: DataService, private customers: CustomersService){}
 
     @Get()
+    @Timeout(6000)
     getContracts() {
         return this.contracts.getContracts();
     }
