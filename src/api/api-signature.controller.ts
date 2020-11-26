@@ -9,8 +9,9 @@ export class ApiSignatureController {
     getSignature(){
         console.log("::::::::::::::::::GET SIGNATURE::::::::::::::::::");
         console.log(':::Returned request data:::');
-        console.log(this.signature.getfdiProducts());
+        // console.log(this.signature.getfdiProducts());
+        console.log(this.signature.getRandomizedProducts());
         console.log("::::::::::::::::::::::::::::::::::::");
-        return this.signature.getfdiProducts();
+        return this.signature.getRandomizedProducts();
     }
 }
