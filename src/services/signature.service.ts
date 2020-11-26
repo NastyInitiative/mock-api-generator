@@ -385,6 +385,10 @@ export class SignatureService {
                                     "documentId": "f89e513d-ac54-4e05-aa1f-f7c38e580823",
                                     "index": 1
                                 },
+                                {
+                                    "documentId": "5ceebf6c-cd63-4e4c-a1c0-377b4ef33064",
+                                    "index": 2
+                                },
                             ]
                         },
                         {
@@ -1151,6 +1155,10 @@ export class SignatureService {
                                     "documentId": "f89e513d-ac54-4e05-aa1f-f7c38e580823",
                                     "index": 1
                                 },
+                                {
+                                    "documentId": "5ceebf6c-cd63-4e4c-a1c0-377b4ef33064",
+                                    "index": 2
+                                },
                             ]
                         },
                         {
@@ -1827,6 +1835,10 @@ export class SignatureService {
                                     "documentId": "f89e513d-ac54-4e05-aa1f-f7c38e580823",
                                     "index": 1
                                 },
+                                {
+                                    "documentId": "5ceebf6c-cd63-4e4c-a1c0-377b4ef33064",
+                                    "index": 2
+                                }
                             ]
                         },
                         {
@@ -2548,6 +2560,10 @@ export class SignatureService {
                                 {
                                     "documentId": "f89e513d-ac54-4e05-aa1f-f7c38e580823",
                                     "index": 1
+                                },
+                                {
+                                    "documentId": "5ceebf6c-cd63-4e4c-a1c0-377b4ef33064",
+                                    "index": 2
                                 },
                             ]
                         },
@@ -3163,7 +3179,7 @@ export class SignatureService {
         const randIndex = this.getRandomIntInclusive(0, 3);
         console.log("🚀 ~ file: signature.service.ts ~ line 2370 ~ SignatureService ~ getRandomizedProducts ~ randIndex", randIndex);
         const randomizedProducts = this.signatureProductsArray[randIndex];
-        this.setContracts(randomizedProducts.signatureProducts)
+        this.setContracts(randomizedProducts.signatureProducts);
         return randomizedProducts;
     }
 
@@ -3174,11 +3190,9 @@ export class SignatureService {
                 'id': '',
                 'signed': false
             };
-
            contract.id= element.dossierItemId;
            contract.signed = element.completed;
-
-           this.contractsService.contracts.contracts.push(contract)
+           this.contractsService.contracts.contracts.push(contract);
            console.log("🚀 ~ file: signature.service.ts ~ line 3182 ~ SignatureService ~ setContracts ~ contract", contract)
         });
     }

@@ -14,11 +14,7 @@ export class ContractsService {
     //         }
     //     ]
     // }
-    contracts = {
-        "contracts": [
-            
-        ]
-    }
+    contracts = { "contracts": [] }
 
     otpResp = {
         'referenceId': "transactionId"
