@@ -16,10 +16,7 @@ export class ContractsService {
     // }
     contracts = {
         "contracts": [
-            {
-                "id": "P-00000000715-0fcbb388-83d5-439c-a86f-d6f95a9da868",
-                "signed": false
-            },
+            
         ]
     }
 
