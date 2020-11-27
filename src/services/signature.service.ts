@@ -3186,7 +3186,7 @@ export class SignatureService {
             "feaOtpNumber": "*******734"
         },​​​​​
         {​​​​​
-            "feaOtpNumber": "null"
+            "feaOtpNumber": null
         }​​​​​
 
     ];
