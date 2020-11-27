@@ -14,4 +14,13 @@ export class ApiSignatureController {
         console.log("::::::::::::::::::::::::::::::::::::");
         return this.signature.getRandomizedProducts();
     }
+
+    @Get('/ui/getFEAOtpNumber')
+    getFEAOtpNumber(){
+        console.log("::::::::::::::::::GET SIGNATURE OPT NUMBER::::::::::::::::::");
+        console.log(':::Returned request data:::');
+        console.log(this.signature.getRandomizedNumbers());
+        console.log("::::::::::::::::::::::::::::::::::::");
+        return this.signature.getRandomizedNumbers();
+    }
 }

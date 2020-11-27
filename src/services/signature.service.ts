@@ -3169,18 +3169,32 @@ export class SignatureService {
                 }
             }
         },
-    ]
+    ];
 
-    getfdiProducts() {
-        return this.fdiProducts;
-    }
+    signatureOptNumbersArray = [
+    
+        {​​​​​
+            "feaOtpNumber": "*******233"
+        },​​​​​
+        {​​​​​
+            "feaOtpNumber": "*******334"
+        },​​​​​
+        {​​​​​
+            "feaOtpNumber": "*******556"
+        },​​​​​
+        {​​​​​
+            "feaOtpNumber": "*******734"
+        },​​​​​
+        {​​​​​
+            "feaOtpNumber": "null"
+        }​​​​​
 
-    getRandomizedProducts() {
-        const randIndex = this.getRandomIntInclusive(0, 3);
-        console.log("🚀 ~ file: signature.service.ts ~ line 2370 ~ SignatureService ~ getRandomizedProducts ~ randIndex", randIndex);
-        const randomizedProducts = this.signatureProductsArray[randIndex];
-        this.setContracts(randomizedProducts.signatureProducts);
-        return randomizedProducts;
+    ];
+    
+    getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //Il max è incluso e il min è incluso 
     }
 
     setContracts(products){
@@ -3197,9 +3211,22 @@ export class SignatureService {
         });
     }
 
-    getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min; //Il max è incluso e il min è incluso 
+    getfdiProducts() {
+        return this.fdiProducts;
     }
+
+    getRandomizedProducts() {
+        const randIndex = this.getRandomIntInclusive(0, 3);
+        console.log("🚀 ~ file: signature.service.ts ~ line 2370 ~ SignatureService ~ getRandomizedProducts ~ randIndex", randIndex);
+        const randomizedProducts = this.signatureProductsArray[randIndex];
+        this.setContracts(randomizedProducts.signatureProducts);
+        return randomizedProducts;
+    }
+
+    getRandomizedNumbers() {
+        const randIndex = this.getRandomIntInclusive(0, this.signatureOptNumbersArray.length - 1);
+        const randomNumber = this.signatureOptNumbersArray[randIndex];
+        return randomNumber;
+    }
+    
 }
