@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { SignatureService } from 'src/services/signature.service';
+import { SignatureService } from '../../services/digital-ui-services/signature.service';
 
 @Controller('/v1/signature')
 export class ApiSignatureController {

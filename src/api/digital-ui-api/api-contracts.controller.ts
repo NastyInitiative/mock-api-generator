@@ -9,10 +9,10 @@ import { Body,
         Put } from '@nestjs/common';
 import { Timeout } from '@nestjs/schedule';
 
-import { ContractsService } from '../services/contracts.service';
-import { Documents, OTP } from '../models/contracts.model';
+import { ContractsService } from '../../services/digital-ui-services/contracts.service';
+import { Documents, OTP } from '../../models/digital-ui-models/contracts.model';
 import { DataService } from 'src/services/data.service';
-import { CustomersService } from 'src/services/customers.service';
+import { CustomersService } from '../../services/digital-ui-services/customers.service';
 
 
 @Controller('/v1/contracts')

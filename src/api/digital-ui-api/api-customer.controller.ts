@@ -1,7 +1,7 @@
 import { Body, Controller, Get, HttpCode, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
 import { Timeout } from '@nestjs/schedule';
-import { Documents } from 'src/models/contracts.model';
-import { CustomersService } from 'src/services/customers.service';
+import { Documents } from '../../models/digital-ui-models/contracts.model';
+import { CustomersService } from '../../services/digital-ui-services/customers.service';
 import { DataService } from 'src/services/data.service';
 
 

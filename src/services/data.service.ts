@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Documents } from 'src/models/contracts.model';
+import { Documents } from '../models/digital-ui-models/contracts.model';
 
 @Injectable()
 export class DataService {
