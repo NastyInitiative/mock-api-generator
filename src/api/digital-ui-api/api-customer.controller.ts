@@ -14,7 +14,7 @@ export class ApiCustomerController {
     getFeaStatus() {
         console.log("::::::::::::::::::::::::::::::::::::");
         console.log(":::FEA status:::");
-        console.log(this,this.customer.getFeaStatus());
+        console.log(this.customer.getFeaStatus());
         console.log("::::::::::::::::::::::::::::::::::::");
         return this.customer.getFeaStatus();
     }

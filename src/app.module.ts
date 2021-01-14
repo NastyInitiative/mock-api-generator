@@ -1,3 +1,5 @@
+import { SupportUiController } from './api/support-ui-api/support-ui.controller';
+import { PackagesService } from './services/support-ui-services/packages.service';
 import { ApiPersonController } from './api/feu-ui-api/api-person.controller';
 import { PersonService } from './services/feu-ui-services/person.service';
 import { SignatureService } from './services/digital-ui-services/signature.service';
@@ -18,6 +20,7 @@ import { LocationService } from './services/feu-ui-services/location.service';
 @Module({
   imports: [ScheduleModule.forRoot()],
   controllers: [
+    SupportUiController,
     ApiPersonController,
     ApiSignatureController,
     ApiCustomerController,
@@ -27,6 +30,7 @@ import { LocationService } from './services/feu-ui-services/location.service';
     ApiLocationController,
   ],
   providers: [
+    PackagesService,
     PersonService,
     SignatureService,
     CustomersService,

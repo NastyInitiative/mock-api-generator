@@ -1,21 +1,40 @@
-import { Injectable } from "@nestjs/common";
-
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class LocationService {
-    countries = ['Francia', 'Germania', 'Austria', 'Italia']
-    provinces =  ['AG', 'BR', 'CR', 'TR']
-    cities = ['Roma', 'Milano', 'Orvieto']
+  // countries = ['Francia', 'Germania', 'Austria', 'Italia']
 
-    getCountries() {
-        return this.countries
-    }
+  countries = [
+    {
+      'code': 'IT',
+      'value': 'ITALIA',
+    },
+    {
+      'code': 'DE',
+      'value': 'GERMANIA',
+    },
+    {
+      'code': 'AU',
+      'value': 'AUSTRIA',
+    },
+    {
+      'code': 'FR',
+      'value': 'FRANCIA',
+    },
+  ];
 
-    getProvinces() {
-        return this.provinces
-    }
+  provinces = ['AG', 'BR', 'CR', 'TR'];
+  cities = ['Roma', 'Milano', 'Orvieto'];
 
-    getCities() {
-        return this.cities
-    }
+  getCountries() {
+    return this.countries;
+  }
+
+  getProvinces() {
+    return this.provinces;
+  }
+
+  getCities() {
+    return this.cities;
+  }
 }

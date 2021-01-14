@@ -13,11 +13,12 @@ export class ApiPersonController {
         console.log(this.person.getPerson());
         console.log(':::::::::::::::::::');
         return this.person.getPerson()
+        
     }
     @Get('/getAddress')
     @Timeout(6000)
     getAddress() {
-        console.log('::: GET PERSON :::');
+        console.log('::: GET ADDRESS :::');
         console.log(this.person.getAddress());
         console.log(':::::::::::::::::::');
         return this.person.getAddress()
@@ -25,7 +26,7 @@ export class ApiPersonController {
     @Get('/getGender')
     @Timeout(6000)
     getGender() {
-        console.log('::: GET PERSON :::');
+        console.log('::: GET GENDER :::');
         console.log(this.person.getGender());
         console.log(':::::::::::::::::::');
         return this.person.getGender()
